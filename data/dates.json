@@ -1,0 +1,12 @@
+{
+  "_note": "Leave a date empty until it is decided; empty renders as 'TBA'.",
+  "deadlines": [
+    { "label": "Abstract registration", "date": "" },
+    { "label": "Full paper submission", "date": "" },
+    { "label": "Author response period", "date": "" },
+    { "label": "Notification of acceptance", "date": "" },
+    { "label": "Artifact evaluation submission", "date": "" },
+    { "label": "Camera-ready deadline", "date": "" },
+    { "label": "Conference", "date": "2027-10-18 – 2027-10-21" }
+  ]
+}

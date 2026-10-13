@@ -1,0 +1,15 @@
+{
+  "topics": [
+    { "title": "Agent Runtimes & Orchestration", "items": ["Durable execution and checkpointing for long-horizon agents", "Scheduling, preemption and fault tolerance for multi-agent workflows", "Tool-call isolation, sandboxing and sidecar architectures"] },
+    { "title": "Inference Serving at Scale", "items": ["KV-cache management, tiering and prefix sharing", "Speculative decoding, batching and disaggregated prefill/decode", "Latency/throughput trade-offs for agentic, multi-turn traffic"] },
+    { "title": "Kernels, Compilers & Hardware", "items": ["Attention and state-space kernels", "ML compilers and DSLs for accelerators", "Hardware–software co-design for agent workloads"] },
+    { "title": "Training & Post-Training Systems", "items": ["RL post-training infrastructure (rollout, reward, learner)", "Distributed training and elastic resource management", "Data pipelines for agent trajectories"] },
+    { "title": "Evaluation, Benchmarking & Reproducibility", "items": ["Benchmarks for agent systems and serving stacks", "Trace collection and workload characterization", "Methodology for reproducible systems measurement"] },
+    { "title": "Reliability, Safety & Operations", "items": ["Observability and debugging for agent pipelines", "Cost control and resource governance", "Failure analysis and incident studies from production"] }
+  ],
+  "submissionTypes": [
+    { "type": "Full research paper", "detail": "Original systems research with evaluation." },
+    { "type": "Experience / industry paper", "detail": "Lessons from deploying agentic or large-scale AI systems in production." },
+    { "type": "Tools & artifacts paper", "detail": "Open-source frameworks, benchmarks or datasets with an evaluable artifact." }
+  ]
+}

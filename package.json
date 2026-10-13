@@ -1,0 +1,16 @@
+{
+  "name": "casys2027",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Website for CASYS 2027, the Conference on Agentic & Scalable AI Systems",
+  "type": "module",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "serve": "node scripts/serve.mjs",
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs",
+    "test": "node scripts/build.mjs && node scripts/check.mjs"
+  },
+  "license": "MIT"
+}

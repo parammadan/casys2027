@@ -1,0 +1,9 @@
+{
+  "_note": "Fill in name/affiliation only after each person has confirmed the role in writing. Empty name renders as 'To be announced'.",
+  "roles": [
+    { "role": "General Chair", "members": [ { "name": "", "affiliation": "" } ] },
+    { "role": "Program Co-Chairs", "members": [ { "name": "", "affiliation": "" }, { "name": "", "affiliation": "" } ] },
+    { "role": "Artifact Evaluation & Benchmarking Chairs", "members": [ { "name": "", "affiliation": "" }, { "name": "", "affiliation": "" } ] },
+    { "role": "Industry & Infrastructure Chair", "members": [ { "name": "", "affiliation": "" } ] }
+  ]
+}
