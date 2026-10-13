@@ -15,7 +15,10 @@ const data = {
   tracks: load("tracks.json"),
 };
 
-const { layout } = await import(pathToFileURL(join(root, "src", "layout.mjs")));
+const { layout: baseLayout } = await import(pathToFileURL(join(root, "src", "layout.mjs")));
+// Prefix root-relative links with basePath so the site works under a subpath (e.g. user.github.io/repo)
+const base = (data.site.basePath || "").replace(/\/$/, "");
+const layout = (args) => baseLayout(args).replace(/(href|src)="\/(?!\/)/g, `$1="${base}/`);
 
 rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });

@@ -11,13 +11,16 @@ if (!existsSync(dist)) { console.error("dist/ missing — run npm run build firs
 const walk = (d) => readdirSync(d).flatMap((f) => (statSync(join(d, f)).isDirectory() ? walk(join(d, f)) : [join(d, f)]));
 const htmlFiles = walk(dist).filter((f) => f.endsWith(".html"));
 const errors = [];
+const base = (JSON.parse(readFileSync(join(root, "data", "site.json"), "utf8")).basePath || "").replace(/\/$/, "");
 
 for (const f of htmlFiles) {
   const html = readFileSync(f, "utf8");
   const rel = f.slice(dist.length);
   if (!/<title>[^<]+<\/title>/.test(html)) errors.push(`${rel}: missing <title>`);
   if (!/<meta name="description" content="[^"]+">/.test(html)) errors.push(`${rel}: missing description`);
-  for (const [, href] of html.matchAll(/(?:href|src)="(\/[^"#?]*)"/g)) {
+  for (let [, href] of html.matchAll(/(?:href|src)="(\/[^"#?]*)"/g)) {
+    if (base && !href.startsWith(base + "/")) { errors.push(`${rel}: link outside basePath ${href}`); continue; }
+    href = href.slice(base.length);
     const target = href.endsWith("/") ? join(dist, href, "index.html") : join(dist, href);
     if (!existsSync(target)) errors.push(`${rel}: broken link ${href}`);
   }

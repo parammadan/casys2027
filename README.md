@@ -22,7 +22,7 @@ data/            site.json, committee.json, dates.json, tracks.json  <- edit the
 src/layout.mjs   shared HTML shell, nav, SEO + schema.org Event metadata
 src/pages/*.mjs  one module per page (slug, title, description, render)
 src/assets/      style.css, site.js, favicon.svg
-public/          copied verbatim to dist/ (CNAME, .nojekyll)
+public/          copied verbatim to dist/ (.nojekyll; CNAME when on js.org)
 scripts/         build.mjs, check.mjs, serve.mjs
 .github/workflows/deploy.yml   test on PRs, deploy to GitHub Pages on main
 ```
@@ -35,8 +35,13 @@ scripts/         build.mjs, check.mjs, serve.mjs
 - **Contact email:** `site.json` → `contactEmail` (footer and sponsors page fall back to "coming soon").
 - **New page:** add `src/pages/NN-name.mjs` exporting `slug`, `title`, `description`, `render(data)`, and add it to `nav` in `src/layout.mjs`.
 
-## Deploying to casys.js.org
+## Concept mode
 
+`site.json` currently has `concept: true` (yellow "not an announced event" banner) and `basePath: "/casys2027"` for https://parammadan.github.io/casys2027.
+
+## Moving to casys.js.org (only once the conference is real)
+
+0. In `site.json` set `concept: false`, `basePath: ""`, `url: "https://casys.js.org"`, and add `public/CNAME` containing `casys.js.org`.
 1. Push to a GitHub repo and set **Settings → Pages → Source** to *GitHub Actions*.
 2. Request the subdomain by opening a PR to [js-org/js.org](https://github.com/js-org/js.org) that adds `"casys": "<user>.github.io/<repo>"` to `cnames_active.js`. js.org reviews requests for legitimate content.
-3. Once the PR merges, `public/CNAME` already points Pages at `casys.js.org`. Enable *Enforce HTTPS*.
+3. Once the PR merges, enable *Enforce HTTPS* in Pages settings.

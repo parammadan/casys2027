@@ -54,6 +54,7 @@ export function layout({ data, slug, title, description, body }) {
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
+${site.concept ? `<div class="concept" role="note"><div class="wrap"><strong>Concept site.</strong> CASYS 2027 is a design and engineering concept, not an announced event. Don't submit papers or make travel plans based on this page.</div></div>` : ""}
 <header class="top">
   <div class="wrap bar">
     <a class="brand" href="/">CASYS<span>2027</span></a>

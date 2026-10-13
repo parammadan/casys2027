@@ -2,14 +2,20 @@
   "name": "CASYS 2027",
   "fullName": "Conference on Agentic & Scalable AI Systems",
   "tagline": "Building the Systems, Runtime Engine, and Hardware Foundations for Autonomous AI",
-  "dates": { "start": "2027-10-18", "end": "2027-10-21", "display": "October 18–21, 2027" },
+  "dates": {
+    "start": "2027-10-18",
+    "end": "2027-10-21",
+    "display": "October 18–21, 2027"
+  },
   "location": "Boston, MA / Hybrid",
-  "url": "https://casys.js.org",
+  "url": "https://parammadan.github.io/casys2027",
   "contactEmail": "",
   "audience": [
     "Systems and AI engineers",
     "Assistant professors and faculty",
     "PhD researchers",
     "Maintainers of high-performance ML frameworks"
-  ]
+  ],
+  "basePath": "/casys2027",
+  "concept": true
 }
